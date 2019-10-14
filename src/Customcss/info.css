@@ -1,0 +1,53 @@
+.card {
+    width: 18rem;
+}
+
+.container.px-lg-5 {
+    text-align: center;
+    align-content: center;
+    margin-left: 14%;
+}
+
+h1.title {
+    font-weight: bold;
+}
+
+p.card-text {
+    text-align: justify;
+}
+
+.card-body {
+    border: solid 1px;
+    border-color: #d27937;
+}
+
+.card {
+    width: 18rem;
+    height: 190px;
+}
+
+h1.title {
+    font-weight: bold;
+    color: #143d5a;
+}
+
+.notification-container {
+    box-sizing: border-box;
+    position: fixed;
+    top: 4%;
+    font-size: 141%;
+    /* align-content: center; */
+    right: 28%;
+    z-index: 999999;
+    width: 42%;
+    padding: 0px 15px;
+    max-height: calc(100% - 30px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+p.card-text {
+    text-align: justify;
+    font-weight: bold;
+    font-size: 92%;
+}
