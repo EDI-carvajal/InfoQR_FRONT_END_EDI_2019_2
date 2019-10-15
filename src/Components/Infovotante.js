@@ -77,7 +77,7 @@ class infovotante extends Component {
 
 
     scanShow() {
-        NotificationManager.info('Información importante', "Ahora puede scanear su QR", 8000)
+        NotificationManager.info('Información importante', "Ahora puede scanear su QR", 4000)
 
 
         return <Scan cheked1={this.state.checked} checkedState2={this.state.checked1}></Scan>
@@ -105,7 +105,7 @@ class infovotante extends Component {
                                 <div className="card-body">
                                     <h5 className="card-title">Validar Mi voto</h5>
                                     <p className="card-text">Aqui puedes verificar si tu voto fue contabilizado correctamente.</p>
-                                    <Form.Check type="checkbox" id="123" name="check1" onChange={this.checkedState.bind(this)} label="Seleccioname" />
+                                    <Form.Check type="checkbox" id="123" name="check1" onChange={this.checkedState.bind(this)} label="Seleccióname" />
 
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ class infovotante extends Component {
                                 <div className="card-body">
                                     <h5 className="card-title">¿Por quién voté?</h5>
                                     <p className="card-text">Aqui puedes verificar por el candidato que realizaste tu voto en la urna.</p>
-                                    <Form.Check type="checkbox" id="1234" name="check2" onChange={this.checkedState2.bind(this)} label="Seleccioname" />
+                                    <Form.Check type="checkbox" id="1234" name="check2" onChange={this.checkedState2.bind(this)} label="Seleccióname" />
                                 </div>
                             </div>
                         </div>
