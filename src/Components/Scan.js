@@ -14,8 +14,8 @@ class scan extends Component {
 
         this.state = {
             result: 'No result',
-            /* URL: "http://192.168.96.37:5000/",*/
-            URL: "http://e5facf9c.ngrok.io/"
+            URL: "http://192.168.96.37:5000/"
+            /*URL: "http://e5facf9c.ngrok.io/"*/
 
 
 
