@@ -4,6 +4,7 @@ import Scan from './Scan';
 import { Form } from 'react-bootstrap';
 import 'react-notifications/lib/notifications.css'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { connect } from 'react-redux';
 
 
 
@@ -24,60 +25,81 @@ class infovotante extends Component {
     }
 
     componentDidMount() {
+        console.log(" ya tenemos redux yayones" + this.props.prueba)
+        console.log(" ya tenemos redux yayones " + this.props.checked)
+
 
     }
 
 
-    checkedState() {
+    checkedState(e) {
         var v = document.getElementById("123");
         var v1 = document.getElementById("1234");
 
-        if (v.checked == true) {
+        if (e.target.checked == true) {
+            console.log(" mira ve " + e.target.checked)
             v1.checked = false
-            this.setState({
-                checked: true,
-                checked1: false
-            })
 
+            /*
+             this.setState({
+                 checked: true,
+                 checked1: false
+             })
+ */
+
+            this.props.cambiarStado(true, false)
 
 
             console.log("reader " + " estado " + this.state.checked)
 
-        } else if (v.checked == false) {
-            this.setState({
-                checked: false
-            })
+        } else if (e.target.checked == false) {
+            /*
+             this.setState({
+                 checked: false
+             })
+             */
+            console.log("Mira ve falso " + e.target.checked)
+
+            this.props.cambiarcheked(false)
         }
 
 
     }
 
-    checkedState2() {
+    checkedState2(e) {
+
         var v = document.getElementById("123");
         var v1 = document.getElementById("1234");
-        if (v1.checked == true) {
+
+        if (e.target.checked == true) {
             v.checked = false;
-
-            this.setState({
-                checked1: true,
-                checked: false
-
-            })
+            /**
+             *   v.checked = false;
+                        this.setState({
+                            checked1: true,
+                            checked: false
+            
+                        })
+             */
+            this.props.cambiarStado(false, true);
             console.log("reader2 " + " estado " + this.state.checked1)
 
 
 
-        } else if (v1.checked == false) {
-            this.setState({
-                checked1: false
-            })
+        } else if (e.target.checked == false) {
+            /*
+             this.setState({
+                 checked1: false
+             })
+ */
+            this.props.cambiarcheked1(false)
 
         }
     }
 
 
     scanShow() {
-        NotificationManager.info('Información importante', "Ahora puede scanear su QR", 4000)
+        NotificationManager.info('Información importante', "Ahora puede scanear su QR", 3000)
 
 
         return <Scan cheked1={this.state.checked} checkedState2={this.state.checked1}></Scan>
@@ -126,7 +148,7 @@ class infovotante extends Component {
 
 
                 {
-                    this.state.checked == true ? (
+                    this.props.checked == true ? (
 
                         this.scanShow()
 
@@ -135,7 +157,7 @@ class infovotante extends Component {
 
 
                 {
-                    this.state.checked1 == true ? (
+                    this.props.checked1 == true ? (
 
                         this.scanShow()
 
@@ -155,4 +177,46 @@ class infovotante extends Component {
 
 }
 
-export default infovotante;
+
+const mapStateProps = state => ({
+
+    prueba: state.prueba,
+    checked: state.checked,
+    checked1: state.checked1,
+
+
+})
+
+const mapDispatchToProps = dispactch => ({
+
+
+    cambiarStado(checked, cheked1) {
+        dispactch({
+            type: "Cambiar_Cheked",
+            chek: checked,
+            check1: cheked1
+
+        })
+
+    },
+
+    cambiarcheked1(cheked1) {
+        dispactch({
+            type: "Cambiar_Cheked1",
+            check1: cheked1
+
+        })
+    },
+
+    cambiarcheked(cheked) {
+        dispactch({
+            type: "Cambiar_Cheked_only",
+            check: cheked
+
+        })
+    }
+
+
+})
+
+export default connect(mapStateProps, mapDispatchToProps)(infovotante);
