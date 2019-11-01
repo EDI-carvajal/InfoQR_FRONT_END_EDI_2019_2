@@ -16,16 +16,11 @@ class scan extends Component {
 
         this.state = {
             result: 'No result',
-            URL: "http://192.168.96.37:5000/",
+            /*URL: "http://192.168.96.37:5000/",*/
             show: true,
             checked1: this.props.cheked1,
-            checked2: this.props.checkedState2
-
-            /*URL: "http://e5facf9c.ngrok.io/"*/
-
-
-
-
+            checked2: this.props.checkedState2,
+            URL: "https://b7a74ef9.ngrok.io/"
 
         }
 
