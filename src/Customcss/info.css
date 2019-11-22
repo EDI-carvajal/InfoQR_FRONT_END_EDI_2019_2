@@ -5,7 +5,7 @@
 .container.px-lg-5 {
     text-align: center;
     align-content: center;
-    margin-left: 14%;
+    margin-left: auto;
 }
 
 h1.title {
@@ -50,4 +50,12 @@ p.card-text {
     text-align: justify;
     font-weight: bold;
     font-size: 92%;
+}
+
+@media (min-width: 2048px) {
+    .container.px-lg-5 {
+        text-align: center;
+        align-content: center;
+        margin-left: auto;
+    }
 }
