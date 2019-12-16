@@ -20,7 +20,7 @@ class scan extends Component {
             show: true,
             checked1: this.props.cheked1,
             checked2: this.props.checkedState2,
-            URL: "https://d813afb8.ngrok.io/"
+            URL: "https://7396f703.ngrok.io/"
 
         }
 
