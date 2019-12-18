@@ -27,7 +27,7 @@ class scan extends Component {
         console.log("hola" + this.props)
     }
 
-
+/** Este método permite scanear un código QR   que contiene información clave para saber si el voto fue por un candidato específico o si el voto fue tenido en cuenta correctamente*/
     handleScan = data => {
         if (data) {
 
@@ -138,6 +138,7 @@ class scan extends Component {
 
     }
 
+    /** Scaner de Qr que se ingresa por la pantalla */
     scanerr() {
 
         if (this.state.show == true) {

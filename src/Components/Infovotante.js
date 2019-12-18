@@ -31,6 +31,8 @@ class infovotante extends Component {
 
     }
 
+    /**  El método permite seleccionar la opción que se desea consultar, si es para saber si el voto fue contado exitosamente o es para saber el candidato especifico */
+
 
     checkedState(e) {
         var v = document.getElementById("123");
@@ -65,6 +67,8 @@ class infovotante extends Component {
 
 
     }
+
+    /**  El método permite seleccionar la opción que se desea consultar, si es para saber si el voto fue contado exitosamente o es para saber el candidato especifico */
 
     checkedState2(e) {
 
